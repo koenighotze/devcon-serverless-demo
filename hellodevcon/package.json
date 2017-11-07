@@ -1,0 +1,15 @@
+{
+  "name": "devcon-schedule-lambda",
+  "version": "1.0.0",
+  "description": "Hello Devcon Lambda.",
+  "main": "index.js",
+  "scripts": {
+    "package": "zip index.zip index.js",
+    "update.lambda": "npm run package && aws lambda update-function-code --function-name HelloDevcon --zip-file fileb://index.zip",
+    "create.lambda": "npm run package && aws lambda create-function --function-name HelloDevcon --runtime nodejs6.10 --role arn:aws:iam::604370441254:role/basic-lambda-logging-permissions --handler index.handler --zip-file fileb://index.zip",
+    "invoke.lambda": "aws lambda invoke --function-name HelloDevcon out.txt",
+    "delete.lambda": "aws lambda delete-function --function-name HelloDevcon"
+  },
+  "author": "David Schmitz",
+  "license": "ISC"
+}
