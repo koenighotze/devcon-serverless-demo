@@ -2,6 +2,11 @@
 
 This repository contains the demos for the Serverless@Devcon presentation.
 
+Other relevant demos are:
+
+- [the alexa skill and api lambda](https://github.com/koenighotze/alexa-devcon-schedule)
+- [the react/s3 hosted frontend](https://github.com/koenighotze/devcon-schedule-ui), see [here](http://dschmitz.devcon.ui.s3-website-eu-west-1.amazonaws.com/)
+
 [![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## [Demo 1](demo1_hellodevcon)
