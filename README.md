@@ -1,31 +1,66 @@
 # Demo for Serverless@Devcon
 
+[![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc/4.0/)
+
 This repository contains the demos for the Serverless@Devcon presentation.
 
-Other relevant demos are:
+Other relevant demos are related to the Alexa, S3-React and Polly conference schedule:
 
 - [the alexa skill and api lambda](https://github.com/koenighotze/alexa-devcon-schedule)
 - [the react/s3 hosted frontend](https://github.com/koenighotze/devcon-schedule-ui), see [here](http://dschmitz.devcon.ui.s3-website-eu-west-1.amazonaws.com/)
-
-[![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc/4.0/)
+- [the schedule to speech lamdba](https://github.com/koenighotze/devcon-schedule-to-speech)
 
 ## [Demo 1](demo1_hellodevcon)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, animi, fugiat. Sequi perferendis officiis illum, odio commodi, et nostrum unde quibusdam, dignissimos nobis doloremque dolorem atque molestiae aliquid optio maiores!
+Simple 'Hello world' lambda. No frameworks no nothing.
+
+```
+$ npm run create.lambda && npm run invoke.lambda
+```
 
 ## [Demo 2](demo1_sam_local)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae officiis aperiam non laborum unde impedit eius excepturi provident quae. Dolorem velit numquam maxime corporis alias odit molestias suscipit a. Dolores.
+Introduces SAM local for the 'Hello world' lambda.
+Requires a local installation of [SAM local](https://github.com/awslabs/aws-sam-local).
+
+
+Excecute the following command to test the lambda using SAM.
+
+```
+$ npm run test.lambda
+```
 
 ## [Demo 3](demo1_hellodevcon_api)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam adipisci fugiat cupiditate dolores libero vel necessitatibus cumque fuga officia ad ab reprehenderit quo, obcaecati, qui pariatur voluptatum quidem nulla voluptas.
+Extends the lambda with a REST proxy API gateway, without any frameworks.
 
+First of all create the API gateway:
+
+```
+$ create_api.sh
+```
+
+Then create the lambda and test the gateway:
+
+```
+$ npm run create.lambda && npm run test.lambda.api
+```
 
 ## [Demo 4](demo1_hellodevcon_claudiajs)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae earum molestiae quia accusantium magnam necessitatibus, similique ut consequuntur alias velit explicabo dolorum totam ad odit quibusdam magni voluptatem voluptates suscipit.
+Shows how easy an API gateway can be created using Claudia.JS.
 
+Create the gateway using:
+
+```
+$ npm run claudia.create
+```
+
+Test it with
+
+```
+$ npm test
+```
 
 ## General hints
 
@@ -33,10 +68,18 @@ This section offers some general tool tips and hints for dealing with aws lambda
 
 ### Add X-Ray
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquid debitis, accusantium architecto incidunt possimus odit neque quis facere impedit expedita veritatis quam vitae, omnis placeat provident, perspiciatis dolorum eius?
+Amazon X-Ray can be added to lambdas easily.
+
+TODO:
 
 ### Fetching logs
 
-awslogs
+(awslogs)[https://github.com/jorgebastida/awslogs] is a very useful convinience tool for retrieving CloudWatch logs.
+
+```
+$ awslogs get /aws/lambda/DevconScheduleApi
+```
+
+fetches the log stream of the lambda function `DevconScheduleApi`.
 
 
