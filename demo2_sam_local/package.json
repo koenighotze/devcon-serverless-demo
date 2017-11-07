@@ -1,0 +1,10 @@
+{
+  "name": "devcon-schedule-lambda",
+  "version": "1.0.0",
+  "description": "Sam local for simple lambda.",
+  "scripts": {
+    "test.lambda": "sam local invoke --event helloevent.json HelloDevcon"
+  },
+  "author": "David Schmitz",
+  "license": "ISC"
+}
